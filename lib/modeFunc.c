@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-void  mode_select()
+int  mode_select()
 {
-  printf("==========================\n");
-  printf("Current Mode :\n");
-  printf("==========================\n");
-  printf("Select Mode : 0.Manual 1.Default 2.Engineering 3.Programmer\n");
+  char mode = 0;
+  printf("Select Mode : 0.Manual 1.Default 2.Engineering 3.Programmer (q.Quit)\n");
+  scanf("%c",&mode);
+
+  return mode;
 }
