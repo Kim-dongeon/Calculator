@@ -191,9 +191,10 @@ int calc(char *p) {
 int main(void) {
 
 	int r;
-	char exp[256] = "121*(0+1)/(2-4)";
+	char exp[256];
 	char pf[256];
 
+	gets(exp);
 	postfix(pf, exp);
 	printf("Postfix : %s\n", pf);
 
