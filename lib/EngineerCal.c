@@ -5,7 +5,7 @@
 
 #define PI 3.1415926535897
 
-int isLogical()
+int isLogical(char *ch)
 {
 
 }
@@ -69,7 +69,9 @@ double Cosh(double _num)
 
 int main()
 {
-
+	char ch[256];
+	gets(ch);
+	isLogical(ch);
 
 
 
