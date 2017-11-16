@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 int Hex()
 {
@@ -37,11 +38,28 @@ void funcCall()
 
 }
 
+int isLogical(char *_command)
+{
+	char *func[4] = {"Hex","Dec","Oct","Bin"};
+	int arr_size = sizeof(func)/sizeof(func[0]);
+
+	for(int i=0;i<arr_size;i++)
+	{
+		if(strcmp(func[i],_command) ==0)
+		{
+			printf("find\n");
+			return 1;
+		}
+	}
+
+	printf("It is not logical !!\n");
+	return 0;
+}
 int main()
 {
 	char command[256];
 	printf("Command : ");
 	gets(command);
 	Parsing(command);
-
+	isLogical(command);
 }
