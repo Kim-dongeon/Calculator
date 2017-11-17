@@ -56,4 +56,7 @@ void inchToKm()
 int main()
 {
 
+	char command[256];
+	gets(command);
+	parsing(command);
 }
