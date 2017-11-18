@@ -1,5 +1,22 @@
 #include <stdio.h>
 
+void showEngineeringCalManual()
+{
+
+}
+void showDefaultCalManual()
+{
+
+}
+void showProgrammerCalManual()
+{
+
+}
+
+void showConverterCalManual()
+{
+
+}
 void manual()
 {
 	printf("--------------------------------------------\n");
@@ -14,15 +31,18 @@ void manual()
 	{
 		printf("This menu is Standard calculator. Perform basic arithmetic operations as well as square root and square operations\n");
 
-	}
+		showDefaultCalManual();
+}
 	else if(menu ==2)
 	{
 		printf("This menu is Engineering calculator. Perform factorials, modular calculations, and logarithmic operations that are deeper than regular calculators.\n");
-	}
+		showEngineeringCalManual();
+}
 	else if(menu ==3)
 	{
 		printf("This menu is Programmer calculator. Perform logical operations such as OR,XOR,AND,NOT, for program implementation.\n");
-	}
+		showProgrammerCalManual();
+}
 	else if(menu==4)
 	{
 		printf("This menu is Date calculator. Perform Date differences, D-day\n");
@@ -30,7 +50,9 @@ void manual()
 	else if(menu==5)
 	{
 		printf("This menu is Unit convertor. Perform data conversion, and volume conversion.\n");
-	}	
+		showconverterCalManual();
+
+}
 }
 
 
