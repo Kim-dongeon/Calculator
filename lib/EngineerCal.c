@@ -67,6 +67,49 @@ double Cosh(double _num)
 
 }
 
+void funcCall(int n, double _num)
+{
+	if(n ==0)
+	{
+		Sind(_num);
+	}
+	else if(n==1)
+	{
+		Cosd(_num);
+	}
+	else if(n==2)
+	{
+		Tand(_num);
+	}
+	else if(n==3)
+	{
+		Log(_num);
+	}
+	else if(n==4)
+	{
+		LogT(_num);
+	}
+	else if(n==5)
+	{
+		Sqrt(_num);
+	}
+	else if(n==6)
+	{
+		Exp(_num);
+	}
+	else if(n==7)
+	{
+		Sinh(_num);
+	}
+	else if(n==8)
+	{
+		Cosh(_num);
+	}
+	else if(n==9)
+	{
+		Tanh(_num);
+	}
+}
 int main()
 {
 	char ch[256];
