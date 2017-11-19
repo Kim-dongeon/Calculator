@@ -33,9 +33,24 @@ void Parsing(char *_command)
 
 }
 
-void funcCall()
+void funcCall(int n)
 {
-
+	if(n ==0)
+	{
+		Hex();
+	}
+	else if (n ==1)
+	{
+		Dex();
+	}
+	else if(n==2)
+	{
+		Oct();
+	}
+	else if(n==3)
+	{
+		Bin();
+	}
 }
 
 int isLogical(char *_command)
