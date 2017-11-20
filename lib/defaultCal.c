@@ -188,6 +188,29 @@ int calc(char *p) {
 	}
 	return pop();
 }
+
+void execution_defaultCal()
+{
+	char exp[256];
+	char pf[256];
+	int r;
+
+	gets(exp);
+	postfix(pf,exp);
+	printf("Post ifx : %s\n",pf);
+
+	if(!is_legal(pf))
+	{
+		printf("Expression is legal!\n");
+		return ;
+	}
+
+	r = calc(pf);
+	printf("Answer : %d\n",r);
+
+	return;
+
+}
 int main(void) {
 
 	int r;
@@ -200,7 +223,7 @@ int main(void) {
 
 	if (!is_legal(pf)) {
 		printf("Exprssion is legal!\n");
-		exit(1);
+		return 0;
 	}
 	r = calc(pf);
 	printf("Answer : %d\n", r);
