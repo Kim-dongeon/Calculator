@@ -110,6 +110,14 @@ void funcCall(int n, double _num)
 		Tanh(_num);
 	}
 }
+
+void executionEngineerCal()
+{
+	char ch[256];
+	gets(ch);
+	isLogical(ch);
+	funcCall();
+}
 int main()
 {
 	char ch[256];
