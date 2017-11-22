@@ -25,12 +25,14 @@ double Sind(double _num)
 {
 	getRadian(_num);
 	double num = sind(_num);
-	reutrn num;
+	return num;
 }
 
 double Cosd(double _num)
 {
-
+	getRadian(_num);
+	double num = cosd(_num);
+	return num;
 }
 
 double Log(double _num)
@@ -43,7 +45,9 @@ double LogT(double _num)
 }
 double Tand(double _num)
 {
-
+	getRadian(_num);
+	double num = tand(_num);
+	return num;
 }
 double Sqrt(double _num)
 {
