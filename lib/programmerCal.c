@@ -70,7 +70,7 @@ int isLogical(char *_command)
 	printf("It is not logical !!\n");
 	return 0;
 }
-void executionprgrammerCal()
+void executionprogrammerCal()
 {
 	char command[256];
 	printf("Command : ");
