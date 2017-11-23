@@ -12,7 +12,7 @@ int isLogical(char *ch)
 
 int parsing(char *string)
 {
-	isLocal();
+	isLogical();
 }
 double getRadian(int _num)
 {
@@ -114,13 +114,31 @@ void funcCall(int n, double _num)
 		Tanh(_num);
 	}
 }
+void compareCommand(char *cmd)
+{
 
+	parsing(cmd);
+	if(strcmp(cmd,"Sind") ==0)
+	{
+
+	}
+	else if(strstrcmp(cmd,"Cosd") ==0)
+	{
+
+	}
+	else if(strcmp(cmd,"Tand") ==0)
+	{
+
+	}
+	funcCall();
+}
 void executionEngineerCal()
 {
 	char ch[256];
 	gets(ch);
 	isLogical(ch);
-	funcCall();
+	compareCommand(ch);
+
 }
 int main()
 {
