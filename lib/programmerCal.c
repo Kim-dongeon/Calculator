@@ -39,9 +39,9 @@ void funcCall(int n)
 	{
 		Hex();
 	}
-	else if (n ==1)
+	else if (n==1)
 	{
-		Dex();
+		Dec();
 	}
 	else if(n==2)
 	{
@@ -77,6 +77,19 @@ void executionprogrammerCal()
 	gets(command);
 	Parsing(command);
 	isLogical(command);
+
+	if(strcmp(command,"HEX") ==0)
+	{
+		funcCall(0);
+	}
+	else if(strcmp(command,"DEC") ==0)
+	{
+		funcCall(1);
+	}
+	else if(strcmp(command,"Bin")==0)
+	{
+		funcCall(2);
+	}
 }
 int main()
 {
