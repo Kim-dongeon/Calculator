@@ -61,14 +61,23 @@ double Exp(double _num)
 double Sinh(double _num)
 {
 
+	getRadian(_num);
+	double num = tanh(_num);
+	return num;
 }
 double Tanh(double _num)
 {
 
+	getRadian(_num);
+	double num = tanh(_num);
+	return num;
 }
 double Cosh(double _num)
 {
 
+	getRadian(_num);
+	double num = tanh(_num);
+	return num;
 }
 
 void funcCall(int n, double _num)
