@@ -1,6 +1,7 @@
 #ifndef ENGINEERCAL_H
 #define ENGINEERCAL_H
 
+void compareCommand(char *cmd);
 void executionEngineerCal();
 void funcCall(int n, double _num);
 double Sind(double _num);

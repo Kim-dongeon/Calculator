@@ -13,6 +13,7 @@ int is_legal(char *s);
 int precedence(int op);
 void postfix(char *dst,char *src);
 int calc(char *p);
+void exevution_defaultCal();
 
 #endif
 
