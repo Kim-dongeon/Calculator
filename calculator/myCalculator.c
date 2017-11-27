@@ -15,6 +15,7 @@ int main()
     }else if(mode == '1')
     {
 	printf("Current Mode : Default\n");
+	execution_defaultCal();
     }else if(mode == '2')
     {
 	printf("Current Mode : Engineering\n");
