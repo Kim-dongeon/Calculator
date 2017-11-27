@@ -37,7 +37,9 @@ double Cosd(double _num)
 
 double Log(double _num)
 {
-
+	getRadian(_num);
+	double num = log(_num);
+	return num;
 }
 double LogT(double _num)
 {
@@ -52,17 +54,23 @@ double Tand(double _num)
 double Sqrt(double _num)
 {
 
+	getRadian(_num);
+	double num = sqrt(_num);
+	return num;
 }
 
 double Exp(double _num)
 {
 
+	getRadian(_num);
+	double num = exp(_num);
+	return num;
 }
 double Sinh(double _num)
 {
 
 	getRadian(_num);
-	double num = tanh(_num);
+	double num = sinh(_num);
 	return num;
 }
 double Tanh(double _num)
@@ -76,7 +84,7 @@ double Cosh(double _num)
 {
 
 	getRadian(_num);
-	double num = tanh(_num);
+	double num = cosh(_num);
 	return num;
 }
 
