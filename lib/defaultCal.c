@@ -195,19 +195,25 @@ void execution_defaultCal()
 	char pf[256];
 	int r;
 
+
+	printf("command : ");
 	gets(exp);
+	if(strcmp(exp,"q") ==0)
+	{
+		return;
+	}
 	postfix(pf,exp);
 	printf("Post ifx : %s\n",pf);
 
 	if(!is_legal(pf))
 	{
 		printf("Expression is legal!\n");
-		return ;
+		return  ;
 	}
 
 	r = calc(pf);
 	printf("Answer : %d\n",r);
 
-	return;
+	return ;
 
 }

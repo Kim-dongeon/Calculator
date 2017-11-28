@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "defaultCal.h"
+#include <string.h>
 
 int main()
 {
@@ -15,7 +16,11 @@ int main()
     }else if(mode == '1')
     {
 	printf("Current Mode : Default\n");
-	execution_defaultCal();
+	while(getchar() !='\n');
+	while(1)
+	{
+		execution_defaultCal();
+	}
     }else if(mode == '2')
     {
 	printf("Current Mode : Engineering\n");
