@@ -2,6 +2,8 @@
 #include <string.h>
 #include <unistd.h>
 
+char *func[4] = {"Hex","Dec","Oct","Bin"};
+
 int Hex()
 {
 
@@ -24,12 +26,18 @@ int Bin()
 
 void Parsing(char *_command)
 {
-	char *ptr = strtok(_command,"(");
-	while(ptr !=NULL)
+	char *ptr =NULL;
+	for(int i=0; i<4;i++)
 	{
-		printf("%s\n",ptr);
-		ptr = strtok(NULL,"(");
+		ptr= strstr(_command,func[i]);
+		if(ptr !=NULL)
+		{
+			printf("%s",ptr);
+			return;
+		}
 	}
+	
+	
 
 }
 
@@ -55,7 +63,7 @@ void funcCall(int n)
 
 int isLogical(char *_command)
 {
-	char *func[4] = {"Hex","Dec","Oct","Bin"};
+	
 	int arr_size = sizeof(func)/sizeof(func[0]);
 
 	for(int i=0;i<arr_size;i++)
