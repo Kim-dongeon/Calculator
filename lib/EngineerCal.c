@@ -43,7 +43,9 @@ double Log(double _num)
 }
 double LogT(double _num)
 {
-
+	getRadian(_num);
+	double num = logB(_num);
+	return num;
 }
 double Tand(double _num)
 {
