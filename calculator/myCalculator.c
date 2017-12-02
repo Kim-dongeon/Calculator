@@ -4,27 +4,27 @@
 
 int main()
 {
-  char mode=0;
+  int mode=0;
 
-  mode = mode_select();
 
   while(1)
   {
-    if(mode == '0')
+    mode = mode_select();
+    if(mode == 0)
     {
 	printf("Current Mode : Manual\n");
-    }else if(mode == '1')
+    }else if(mode == 1)
     {
 	printf("Current Mode : Default\n");
 	while(getchar() !='\n');
-	while(1)
+	while(execution_defaultCal())
 	{
-		execution_defaultCal();
 	}
-    }else if(mode == '2')
+ 	mode =-1;
+    }else if(mode == 2)
     {
 	printf("Current Mode : Engineering\n");
-    }else if(mode == '3')
+    }else if(mode == 3)
     {
 	printf("Current Mode : Programmer\n");
     }else if(mode == 'q')

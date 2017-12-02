@@ -17,7 +17,7 @@ int is_legal(char *s);
 int precedence(int op);
 void postfix(char *dst,char *src);
 int calc(char *p);
-void execution_defaultCal();
+int execution_defaultCal();
 
 int stack[MAX_SIZE];
 

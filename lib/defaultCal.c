@@ -189,7 +189,7 @@ int calc(char *p) {
 	return pop();
 }
 
-void execution_defaultCal()
+int execution_defaultCal()
 {
 	char exp[256];
 	char pf[256];
@@ -200,7 +200,7 @@ void execution_defaultCal()
 	gets(exp);
 	if(strcmp(exp,"q") ==0)
 	{
-		return;
+		return 0;
 	}
 	postfix(pf,exp);
 	printf("Post ifx : %s\n",pf);
@@ -208,12 +208,12 @@ void execution_defaultCal()
 	if(!is_legal(pf))
 	{
 		printf("Expression is legal!\n");
-		return  ;
+		return 1 ;
 	}
 
 	r = calc(pf);
 	printf("Answer : %d\n",r);
 
-	return ;
+	return 1;
 
 }
