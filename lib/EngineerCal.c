@@ -162,11 +162,112 @@ void executionEngineerCal()
 int main()
 {
 	char ch[256];
+	char ch1[256];
+	int degree1=0;
+	printf("Select function what you want\n");
+
+	printf("1. sin    2. cos    3. tan\n4. asin   5. acos   6. atan\n7. log    8. log10\n9. sqrt  10. exp\n");
+
 	gets(ch);
-	isLogical(ch);
+	
+	if (strlen(ch) > 2)
+	{
+		isLogical(ch);
+		degree = atoi(param);
+	}
 
+	if (strcmp(func, "sin") == 0||strcmp(ch,"1")==0)
+	{
+		if (strcmp(ch, "1") == 0)
+		{
+			printf("Please fill in the angle you want\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", Sind(degree1));
 
+		}
+		else {
+			printf("%f\n", Sind(degree));
+		}		
+	}
+	else if (strcmp(func, "cos") == 0 || strcmp(ch, "2") == 0)
+	{
+		
+		if (strcmp(ch, "2") == 0)
+		{
+			printf("Please fill in the angle you want\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", Cosd(degree1));
 
-	return 0;
+		}
+		else {
+			printf("%f\n", Cosd(degree));
+		}
+	}
+	else if (strcmp(func, "tan") == 0 || strcmp(ch, "3") == 0)
+	{
+		
+		if (strcmp(ch, "3") == 0)
+		{
+			printf("Please fill in the angle you want\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", Tand(degree1));
+
+		}
+		else {
+			printf("%f\n", Tand(degree));
+		}
+	}
+	else if (strcmp(func, "asin") == 0 || strcmp(ch, "4") == 0)
+	{
+		if (strcmp(ch, "4") == 0)
+		{
+			printf("Please fill in the angle you want\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", Sinh(degree1));
+
+		}
+		else {
+			printf("%f\n", Sinh(degree));
+		}
+	}
+	else if (strcmp(func, "acos") == 0 || strcmp(ch, "5") == 0)
+	{
+		
+		if (strcmp(ch, "5") == 0)
+		{
+			printf("Please fill in the angle you want\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", Cosh(degree1));
+
+		}
+		else {
+			printf("%f\n", Cosh(degree));
+		}
+	}
+	else if (strcmp(func, "atan") == 0 || strcmp(ch, "6") == 0)
+	{
+		
+		if (strcmp(ch, "6") == 0)
+		{
+			printf("Please fill in the angle you want\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", Tanh(degree1));
+
+		}
+		else {
+			printf("%f\n", Tanh(degree));
+		}
+	}
+	else if (strcmp(func, "log") == 0)
+	{
+		
+		printf("%f", log(degree));
+	}
 }
 
