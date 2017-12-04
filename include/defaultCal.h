@@ -5,7 +5,7 @@
 #define true 1
 #define false 0
 
-int mode_select();
+char mode_select();
 void init_stack();
 int isEmpty();
 int isFull();
