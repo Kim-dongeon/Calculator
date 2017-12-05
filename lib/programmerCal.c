@@ -4,26 +4,61 @@
 
 char *func[4] = {"Hex","Dec","Oct","Bin"};
 
-int Hex()
-{
+int Hex(int num)
+{	
+	int position = 0;
+	char hexadecimal[20] = { 0, };
 
+	while (1)
+	{
+		int mod = num % 16;    
+		if (mod < 10) //
+		{
+			hexadecimal[position] = 48 + mod;
+		}
+		else    
+		{			
+			hexadecimal[position] = 65 + (mod - 10);
+		}
+
+		num = num / 16;   
+
+		position++;   
+
+		if (num == 0)    
+			break;
+	}
+	for (int i = position - 1; i >= 0; i--)
+	{
+		printf("%c", hexadecimal[i]);
+	}
 }
 
-int Dec()
-{
-
+int Oct(int num)
+{	
+	if (num < 1)
+	{
+		return 0;
+	}
+	else
+	{
+		Oct(num / 8);
+		printf("%d", num % 8);
+	}
 }
 
-int Oct()
+int Bin(int num)
 {
-
+	if (num < 1)
+	{
+		return 0;
+	}
+	else
+	{
+		Bin(num / 2);
+		printf("%d", num % 2);
+	}
 }
-
-int Bin()
-{
-
-}
-
 void Parsing(char *_command)
 {
 	char *ptr =NULL;
