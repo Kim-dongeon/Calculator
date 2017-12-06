@@ -11,6 +11,7 @@ int main()
   while(1)
   {
     mode = mode_select();
+	printf("===================\n");
 	printf("mode select : %c\n",mode);
 
     if(mode == '0')
@@ -33,6 +34,12 @@ int main()
 	while(executionprogrammerCal())
 	{
 
+	}
+	
+    }else if (mode =='4')
+    {
+	while(executionConverter())
+	{
 	}
     }else if(mode == 'q')
     {

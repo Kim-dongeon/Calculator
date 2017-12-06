@@ -70,60 +70,70 @@ float inchToKm(float data)
 	return ret;
 }
 
-int main()
+int executionConverter()
 {
 	char command[256];
-	int select = 0;
+	char select = 0;
 	float value = 0;
+	printf("===============================================================\n");
 	printf("Please select the unit conversion you want and give the number\n");
-	printf("1. Km -> Cm	2. Cm -> Km	3. Cm -> M	4. M -> Cm	5. inch -> Cm\n6. Cm -> inch	7. M -> inch	8. inch -> M	9. Km -> inch	10. inch -> Km\n");
+	printf("1. Km -> Cm	2. Cm -> Km	3. Cm -> M	4. M -> Cm	5. inch -> Cm\n6. Cm -> inch	7. M -> inch	8. inch -> M	9. Km -> inch	0. inch -> Km quit : q\n");
 	while (1)
 	{
-		scanf("%d", &select);
+		printf(":");
+		scanf("%c", &select);
+		
+		if(select == 'q')
+		{
+			getchar();
+			return 0;
+		}
 		printf("Please specify the value you want to convert\n");
+		printf(":");
 		scanf("%f", &value);
-
-		if (select == 1)
+		if (select == '1')
 		{
 			printf("The converted value is %f\n", kmTocm(value));
 		}
-		else if (select == 2)
+		else if (select == '2')
 		{
 			printf("The converted value is %f\n", cmTokm(value));
 		}
-		else if (select == 3)
+		else if (select == '3')
 		{
 			printf("The converted value is %f\n", cmTom(value));
 		}
-		else if (select == 4)
+		else if (select == '4')
 		{
 			printf("The converted value is %f\n", mTocm(value));
 		}
-		else if (select == 5)
+		else if (select == '5')
 		{
 			printf("The converted value is %f\n", inchTocm(value));
 		}
-		else if (select == 6)
+		else if (select == '6')
 		{
 			printf("The converted value is %f\n", cmToinch(value));
 		}
-		else if (select == 7)
+		else if (select == '7')
 		{
 			printf("The converted value is %f\n", mToinch(value));
 		}
-		else if (select == 8)
+		else if (select == '8')
 		{
 			printf("The converted value is %f\n", inchTom(value));
 		}
-		else if (select == 9)
+		else if (select == '9')
 		{
 			printf("The converted value is %f\n", kmToinch(value));
 		}
-		else if (select == 10)
+		else if (select == '0')
 		{
 			printf("The converted value is %f\n", inchToKm(value));
 		}
-		printf("Please select the unit conversion you want and give the number\n");
+
+		printf("\n");
+		return 1;
 	}
 }
 

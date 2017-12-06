@@ -57,6 +57,8 @@ void manual()
 	{
 		printf("Manual Exit\n");
 	}
+
+	printf("\n");
 }
 
 
