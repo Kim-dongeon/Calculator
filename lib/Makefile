@@ -16,4 +16,4 @@ converter.o: converter.c
 engineerCal.o: EngineerCal.c
 	gcc -c -g EngineerCal.c -o engineerCal.o -lm
 clean:
-	rm defaultCal.o modeFunc.o programmerCal.o converter.o
+	rm defaultCal.o modeFunc.o programmerCal.o converter.o manual.o engineerCal.o

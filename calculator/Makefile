@@ -6,4 +6,4 @@ mycalculator: mycalculator.o ../lib/libfuncs.a
 mycalculator.o:myCalculator.c
 	gcc -g -c myCalculator.c -I../include
 clean:
-	rm mycalculator
+	rm mycalculator myCalculator.o

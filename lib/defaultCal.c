@@ -203,7 +203,7 @@ int execution_defaultCal()
 		return 0;
 	}
 	postfix(pf,exp);
-	printf("Post ifx : %s\n",pf);
+//	printf("Post ifx : %s\n",pf);
 
 	if(!is_legal(pf))
 	{
