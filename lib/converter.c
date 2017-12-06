@@ -77,7 +77,7 @@ int executionConverter()
 	float value = 0;
 	printf("===============================================================\n");
 	printf("Please select the unit conversion you want and give the number\n");
-	printf("1. Km -> Cm	2. Cm -> Km	3. Cm -> M	4. M -> Cm	5. inch -> Cm\n6. Cm -> inch	7. M -> inch	8. inch -> M	9. Km -> inch	0. inch -> Km quit : q\n");
+	printf("1. Km -> Cm	2. Cm -> Km	3. Cm -> M	4. M -> Cm	5. inch -> Cm\n6. Cm -> inch	7. M -> inch	8. inch -> M	9. Km -> inch	0. inch -> Km (q).quit \n");
 	while (1)
 	{
 		printf(":");
@@ -91,6 +91,7 @@ int executionConverter()
 		printf("Please specify the value you want to convert\n");
 		printf(":");
 		scanf("%f", &value);
+		getchar();
 		if (select == '1')
 		{
 			printf("The converted value is %f\n", kmTocm(value));

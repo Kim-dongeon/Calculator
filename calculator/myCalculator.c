@@ -3,7 +3,7 @@
 #include <string.h>
 #include "manual.h"
 #include "programmerCal.h"
-
+#include "engineerCal.h"
 int main()
 {
   char mode=0;
@@ -28,6 +28,10 @@ int main()
     }else if(mode == '2')
     {
 	printf("Current Mode : Engineering\n");
+	while(executionEngineerCal())
+	{
+
+	}
     }else if(mode == '3')
     {
 	printf("Current Mode : Programmer\n");

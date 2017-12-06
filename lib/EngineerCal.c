@@ -5,171 +5,93 @@
 
 #define PI 3.1415926535897
 
-int isLogical(char *ch)
+char func[20];
+char param[20];
+int degree;
+
+void parsing(char *string)
 {
+	strcpy(func, strtok(string, "("));
+	strcpy(param, strtok(NULL, ")"));
 
 }
 
-int parsing(char *string)
+void isLogical(char *ch)
 {
-	isLogical();
+	parsing(ch);
+	printf("%s --> %s\n", func, param);
 }
-double getRadian(int _num)
+
+double getRadian(double _num)
 {
 	double radian;
 	radian = _num * (PI / 180);
-	return radian
+	return radian;
 }
-
+//////////////////////////////////////////////////////////
 double Sind(double _num)
 {
-	getRadian(_num);
-	double num = sind(_num);
+
+	double rad = getRadian(_num);
+	double num = sin(rad);
 	return num;
 }
-
 double Cosd(double _num)
 {
-	getRadian(_num);
-	double num = cosd(_num);
+	double rad = getRadian(_num);
+	double num = cos(rad);
 	return num;
 }
 
 double Log(double _num)
 {
-	getRadian(_num);
-	double num = log(_num);
+	double rad = getRadian(_num);
+	double num = log(rad);
 	return num;
 }
-double LogT(double _num)
-{
-	getRadian(_num);
-	double num = logB(_num);
-	return num;
-}
+
 double Tand(double _num)
 {
-	getRadian(_num);
-	double num = tand(_num);
+	double rad = getRadian(_num);
+	double num = tan(rad);
 	return num;
-}
-double Sqrt(double _num)
-{
 
-	getRadian(_num);
-	double num = sqrt(_num);
-	return num;
 }
 
-double Exp(double _num)
-{
-
-	getRadian(_num);
-	double num = exp(_num);
-	return num;
-}
 double Sinh(double _num)
 {
-
-	getRadian(_num);
-	double num = sinh(_num);
+	double rad = getRadian(_num);
+	double num = asin(rad);
 	return num;
+
 }
 double Tanh(double _num)
 {
-
-	getRadian(_num);
-	double num = tanh(_num);
+	double rad = getRadian(_num);
+	double num = atan(rad);
 	return num;
 }
 double Cosh(double _num)
 {
-
-	getRadian(_num);
-	double num = cosh(_num);
+	double rad = getRadian(_num);
+	double num = acos(rad);
 	return num;
 }
 
-void funcCall(int n, double _num)
-{
-	if(n ==0)
-	{
-		Sind(_num);
-	}
-	else if(n==1)
-	{
-		Cosd(_num);
-	}
-	else if(n==2)
-	{
-		Tand(_num);
-	}
-	else if(n==3)
-	{
-		Log(_num);
-	}
-	else if(n==4)
-	{
-		LogT(_num);
-	}
-	else if(n==5)
-	{
-		Sqrt(_num);
-	}
-	else if(n==6)
-	{
-		Exp(_num);
-	}
-	else if(n==7)
-	{
-		Sinh(_num);
-	}
-	else if(n==8)
-	{
-		Cosh(_num);
-	}
-	else if(n==9)
-	{
-		Tanh(_num);
-	}
-}
-void compareCommand(char *cmd)
-{
-
-	parsing(cmd);
-	if(strcmp(cmd,"Sind") ==0)
-	{
-
-	}
-	else if(strstrcmp(cmd,"Cosd") ==0)
-	{
-
-	}
-	else if(strcmp(cmd,"Tand") ==0)
-	{
-
-	}
-	funcCall();
-}
-void executionEngineerCal()
-{
-	char ch[256];
-	gets(ch);
-	isLogical(ch);
-	compareCommand(ch);
-
-}
-int main()
+int executionEngineerCal()
 {
 	char ch[256];
 	char ch1[256];
 	int degree1=0;
 	printf("Select function what you want\n");
 
-	printf("1. sin    2. cos    3. tan\n4. asin   5. acos   6. atan\n7. log    8. log10\n9. sqrt  10. exp\n");
+	printf("1. sin    2. cos    3. tan\n4. asin   5. acos   6. atan\n7. log 8. sqrt  9. exp (q).exit\n");
 
 	gets(ch);
-	
+	if(strcmp(ch,"q")==0)
+	{
+		return 0;
+	}
 	if (strlen(ch) > 2)
 	{
 		isLogical(ch);
@@ -264,10 +186,54 @@ int main()
 			printf("%f\n", Tanh(degree));
 		}
 	}
-	else if (strcmp(func, "log") == 0)
+	else if (strcmp(func, "log") == 0 || strcmp(ch, "7") == 0)
 	{
-		
-		printf("%f", log(degree));
+		if (strcmp(ch, "7") == 0)
+		{
+			printf("Please enter your desired number\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", Log(degree1));
+
+		}
+		else {
+			printf("%f\n", log(degree));
+		}
 	}
+	else if (strcmp(func, "sqrt") == 0 || strcmp(ch, "8") == 0)
+	{
+		if (strcmp(ch, "8") == 0)
+		{
+			printf("Please enter your desired number\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", sqrt(degree1));
+
+		}
+		else {
+			printf("%f\n", sqrt(degree));
+		}
+	}
+	else if (strcmp(func, "exp") == 0 || strcmp(ch, "9") == 0)
+	{
+		if (strcmp(ch, "9") == 0)
+		{
+			printf("Please enter your desired number\n");
+			gets(ch1);
+			degree1 = atoi(ch1);
+			printf("%f\n", exp(degree1));
+
+		}
+		else {
+			printf("%f\n", exp(degree));
+		}
+	}
+	return 1;
 }
+
+
+
+
+
+
 
