@@ -34,6 +34,7 @@ int Hex(int num)
 	{
 		printf("%c", hexadecimal[i]);
 	}
+
 }
 
 int Oct(int num)
@@ -60,6 +61,7 @@ int Bin(int num)
 		Bin(num / 2);
 		printf("%d", num % 2);
 	}
+
 }
 
 void Parsing(char *_command)
@@ -104,18 +106,17 @@ void Parsing(char *_command)
 		
 }
 
-void executionprogrammerCal()
+int executionprogrammerCal()
 {
 	char command[256];
 	printf("Command : ");
 	gets(command);
+	if(strcmp(command,"q")==0)
+	{
+		return 0;
+	}
 	Parsing(command);	
+	printf("\n");
+	return 1;
 }
-int main()
-{
-	char command[256];
-	printf("Command : ");
-	gets(command);
-	Parsing(command);
-	//isLogical(command);
-}
+

@@ -1,14 +1,11 @@
 #ifndef PROGRAMMERCAL_H
 #define PROGRAMMERCAL_H
 
-int Hex();
-int Dec();
-int Oct();
-int Bin();
+int Hex(int num);
+int Oct(int num);
+int Bin(int num);
 void Parsing(char *_command);
-void funcCall(int n);
-int isLogical(char *_command);
-void executionprogrammerCal();
+int  executionprogrammerCal();
 
 
 #endif

@@ -2,6 +2,8 @@
 #include "defaultCal.h"
 #include <string.h>
 #include "manual.h"
+#include "programmerCal.h"
+
 int main()
 {
   char mode=0;
@@ -28,6 +30,10 @@ int main()
     }else if(mode == '3')
     {
 	printf("Current Mode : Programmer\n");
+	while(executionprogrammerCal())
+	{
+
+	}
     }else if(mode == 'q')
     {
 	printf("Program exit\n");

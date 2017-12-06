@@ -1,7 +1,7 @@
 .PHONY: clean
 
-libfuncs.a: defaultCal.o modeFunc.o manual.o
-	ar rv libfuncs.a defaultCal.o modeFunc.o manual.o
+libfuncs.a: defaultCal.o modeFunc.o manual.o programmerCal.o
+	ar rv libfuncs.a defaultCal.o modeFunc.o manual.o programmerCal.o
 
 defaultCal.o: defaultCal.c
 	gcc -c -g defaultCal.c -o defaultCal.o
@@ -9,6 +9,7 @@ modeFunc.o: modeFunc.c
 	gcc -c -g modeFunc.c -o modeFunc.o
 manual.o: manual.c
 	gcc -c -g manual.c -o manual.o
-
+programmerCal.o: programmerCal.c
+	gcc -c -g programmerCal.c -o programmerCal.o
 clean:
-	rm defaultCal.o modeFunc.o
+	rm defaultCal.o modeFunc.o programmerCal.o
