@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
+#include <stdlib.h>
 
-char *func[4] = {"Hex","Dec","Oct","Bin"};
+//#include <unistd.h>
+
+char *func[4] = { "Hex","Dec","Oct","Bin" };
 
 int Hex(int num)
 {	
@@ -59,80 +61,55 @@ int Bin(int num)
 		printf("%d", num % 2);
 	}
 }
+
 void Parsing(char *_command)
 {
-	char *ptr =NULL;
-	for(int i=0; i<4;i++)
+	int i = 0;
+	char *ptr = NULL;
+	char *sArr[10] = { NULL, };
+	int temp = 0;
+
+	ptr = strtok(_command, "()");
+
+	while (ptr != NULL)
 	{
-		ptr= strstr(_command,func[i]);
-		if(ptr !=NULL)
-		{
-			printf("%s",ptr);
-			return;
+		sArr[i] = ptr;
+		i++;		
+		ptr = strtok(NULL, "()");
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (sArr[i] != NULL)
+			printf("%s\n", sArr[i]);
+	}
+	if (sArr[1] == NULL)
+	{
+		printf("Error\n");
+		return;
+	}
+	temp = atoi(sArr[1]);
+		if (strcmp(sArr[0], "Hex") == 0)
+		{			
+			Hex(temp);
 		}
-	}
-	
-	
-
-}
-
-void funcCall(int n)
-{
-	if(n ==0)
-	{
-		Hex();
-	}
-	else if (n==1)
-	{
-		Dec();
-	}
-	else if(n==2)
-	{
-		Oct();
-	}
-	else if(n==3)
-	{
-		Bin();
-	}
-}
-
-int isLogical(char *_command)
-{
-	
-	int arr_size = sizeof(func)/sizeof(func[0]);
-
-	for(int i=0;i<arr_size;i++)
-	{
-		if(strcmp(func[i],_command) ==0)
+		else if (strcmp(sArr[0], "Oct") == 0)
 		{
-			printf("find\n");
-			return 1;
+			Oct(temp);
 		}
-	}
-
-	printf("It is not logical !!\n");
-	return 0;
+		else if (strcmp(sArr[0], "Bin") == 0)
+		{
+			Bin(temp);
+		}
+		
 }
+
 void executionprogrammerCal()
 {
 	char command[256];
 	printf("Command : ");
 	gets(command);
-	Parsing(command);
-	isLogical(command);
-
-	if(strcmp(command,"HEX") ==0)
-	{
-		funcCall(0);
-	}
-	else if(strcmp(command,"DEC") ==0)
-	{
-		funcCall(1);
-	}
-	else if(strcmp(command,"Bin")==0)
-	{
-		funcCall(2);
-	}
+	Parsing(command);	
 }
 int main()
 {
@@ -140,5 +117,5 @@ int main()
 	printf("Command : ");
 	gets(command);
 	Parsing(command);
-	isLogical(command);
+	//isLogical(command);
 }
